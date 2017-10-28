@@ -1,0 +1,38 @@
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Text;
+
+namespace ConsoleApp1
+{
+    //Custom exceptions:
+    
+    public class UserAlreadyLoggedInException:Exception
+    {
+        public UserAlreadyLoggedInException(string mssg1,Exception innerExp):base(mssg1,innerExp)
+        {
+
+        }
+        public UserAlreadyLoggedInException():base()
+        {
+
+        }
+        public UserAlreadyLoggedInException(string mssg):base(mssg)
+        {
+
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            throw new UserAlreadyLoggedInException("customized mssg");
+            
+            //throw new FileNotFoundException("File not found");//customizing the mssg
+
+        }
+
+
+    }
+}
